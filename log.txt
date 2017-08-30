@@ -1,0 +1,16 @@
+
+mer 30 ago 2017, 18.31.06, CEST
+Converting MixGauss.m file:
+	- solved the problem of converting from matrix to array
+		- used squeeze(asarray(x))
+	- current problems with appending matrices
+		- one suggestion is to use c_ and r_ but is not encouraged
+		- looking into append
+	- also the empty matrix X
+		- because when i currently append Xi to it, it keeps the zeros in the 
+		X matrix and then puts Xi
+	- should run the two for loops and then check what Xi is holding
+	- one idea would be to create a temporary matrix which holds the Xi from the
+	first run of for loop, then append the next Xi created to it. 
+
+Now will create a github repo from the current folder.
