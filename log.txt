@@ -7,10 +7,20 @@ Converting MixGauss.m file:
 		- one suggestion is to use c_ and r_ but is not encouraged
 		- looking into append
 	- also the empty matrix X
-		- because when i currently append Xi to it, it keeps the zeros in the 
+		- because when I currently append Xi to it, it keeps the zeros in the 
 		X matrix and then puts Xi
 	- should run the two for loops and then check what Xi is holding
 	- one idea would be to create a temporary matrix which holds the Xi from the
 	first run of for loop, then append the next Xi created to it. 
 
 Now will create a github repo from the current folder.
+----------------------------------------
+
+sab  2 set 2017, 14.48.17, CEST
+Github is setup
+
+- Using concatenate now
+	- concatenates two predefined matrices
+	- should find how to concatenate an empty matrix to a new matrix
+	- also should find how to create an empty matrix without mentioning its size
+	beforehand
