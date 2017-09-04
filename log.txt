@@ -24,3 +24,15 @@ Github is setup
 	- should find how to concatenate an empty matrix to a new matrix
 	- also should find how to create an empty matrix without mentioning its size
 	beforehand
+----------------------------------------
+
+lun  4 set 2017, 15.25.41, CEST
+Tried with removing X from the loop and just concatenated Xi with Xi.
+
+Seems to be working for now.
+
+Should check the values with matlab values.
+
+Checked the corresponding values, for eg. the array at position 0 and pos 100.
+Turns out they are same. Should create something to hold the old values.
+
