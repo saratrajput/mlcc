@@ -35,4 +35,10 @@ Should check the values with matlab values.
 
 Checked the corresponding values, for eg. the array at position 0 and pos 100.
 Turns out they are same. Should create something to hold the old values.
+----------------------------------------
+
+mar  5 set 2017, 19.03.19, CEST
+Trying to reference the index from 0 to 99 for the first set of Xi, then for the
+second set will reference 100 to 199.
+
 
