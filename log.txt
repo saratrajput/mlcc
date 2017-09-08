@@ -41,4 +41,27 @@ mar  5 set 2017, 19.03.19, CEST
 Trying to reference the index from 0 to 99 for the first set of Xi, then for the
 second set will reference 100 to 199.
 
+----------------------------------------
 
+mer  6 set 2017, 23.15.50, CEST
+Was able to solve the problem of appending X. Had to declare as empty lists 
+first. -> Then when the list was done with two arrays, had to convert it into 
+an array. 
+
+There is a still a problem of an array containing two independent arrays, which
+gives the shape like(2, 100, 2) instead of (200, 2). 
+	- For now I'm not able to solve this problem.
+
+Proceeded with plotting the data.
+	- In the first try it got plotted, but the scatter plot seemed too 
+	classified already. There were two distinct groups of data instead of some
+	mixed data like in matlab.
+	- Tried to run it again, but now there's some error. Should check if I made
+	any changes by mistake. Or should restart the kernel.
+	- I remember I tried to remove the array(X). After that it's messed up now.
+
+----------------------------------------
+
+ven  8 set 2017, 23.21.54, CEST
+
+Solved last problem by using X = concatenate(X, axis=0)
