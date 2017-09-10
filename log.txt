@@ -65,3 +65,49 @@ Proceeded with plotting the data.
 ven  8 set 2017, 23.21.54, CEST
 
 Solved last problem by using X = concatenate(X, axis=0)
+
+----------------------------------------
+
+sab  9 set 2017, 18.04.43, CEST
+
+Will create a new function now, PCA. 
+Should contact someone to send me the lab scripts: maybe eloise
+----------------------------------------
+
+dom 10 set 2017, 12.09.25, CEST
+
+Received the lab scripts from Eloise. Will compare with them after everything is
+done.
+
+Made a change in generating random matrix.
+	- Earlier was using random.rand which was giving uniformly distributed 
+	values.
+	- Now made the switch to random.randn for normally distributed values.
+
+(Should look into these two distributions to make it clear)
+
+Now I have to find how to append columns to a matrix.
+	- maybe can use concatenate with a different axis value.
+	- rough work suggests I just have to change axis to 1 to append columns.
+
+Should also look how to use "hold on" in python.
+
+Will check how to use PCA:
+	- should check eloise's script
+	- need meld first
+
+Current Problem:
+[V, D] = eigs(X' * X/n, k);
+	
+	- doing this in python
+	- found linalg.eig in python, which takes only one argument.
+
+	- there's eigh for a hermitian matrix:
+		- hermitian matrix is when you take the transpose of the matrix and then
+		take complex conjugates (i.e. magnitude of the no. is same but the sign 
+		of the complex part is reversed; eg: 1 + i --> 1 - i)
+		- then they turn out to be the same matrix
+
+	- symmetric matrix is when the transpose and the original matrix are the 
+	same.
+
