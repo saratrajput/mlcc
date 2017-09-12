@@ -110,4 +110,16 @@ Current Problem:
 
 	- symmetric matrix is when the transpose and the original matrix are the 
 	same.
+----------------------------------------
+
+lun 11 set 2017, 15.00.55, CEST
+
+
+Now the problem is to find the k eigen values, first I can try to use the 
+regular eig and compare the values.
+
+Should check how the mathematical operations ordering is carried out in matlab.
+
+Multiplication (.*), right division (./), left division (.\), matrix 
+multiplication (*), matrix right division (/), matrix left division (\)
 
