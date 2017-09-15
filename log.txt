@@ -122,4 +122,31 @@ Should check how the mathematical operations ordering is carried out in matlab.
 
 Multiplication (.*), right division (./), left division (.\), matrix 
 multiplication (*), matrix right division (/), matrix left division (\)
+----------------------------------------
+
+mar 12 set 2017, 18.51.28, CEST
+
+There's been some progression regarding last problem. 
+Had to import scipy.sparse.linalg properly to make eigs work properly.
+
+But in case of python, the return of eigs is reversed compared to Matlab.
+	- V is D and D is V.
+	- Also there is no need to use diag as the return is already an array of 
+	diagonal elements.
+
+Current Problem is in sorting: 
+	- the sort function is not returning the indices.
+	- its putting the two numbers in the two outputs to the function.
+	
+	Suggested Solution:
+		- argsort() in numpy
+----------------------------------------
+
+mer 13 set 2017, 06.31.27, CEST
+
+argsort() seems to be useful to only find the indices of the sorted array.
+
+Will have to run two lines
+	- one to sort the array in descending order
+	- another to get the indices
 
