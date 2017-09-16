@@ -149,4 +149,46 @@ argsort() seems to be useful to only find the indices of the sorted array.
 Will have to run two lines
 	- one to sort the array in descending order
 	- another to get the indices
+----------------------------------------
 
+ven 15 set 2017, 23.13.39, CEST
+
+variable.sort() sorts the array and saves it in place of variable.
+	- no need to assign it back to variable.
+	- variable[::-1].sort()
+
+Now, there is a problem with 3d plot. 
+
+But we must focus on the remaining 3 functions before getting stuck with the 
+plots.
+----------------------------------------
+
+sab 16 set 2017, 11.29.39, CEST
+
+Now, working on the OmatchingPursuit function:
+	- transpose of a matrix is given matrix.T
+	- powers are raised by ** instead of ^
+
+OMatchingPursuit seems to be done. 
+	- might run into further errors when testing.
+
+For now we switch to holdoutCVOMP
+	- is one of the longest
+
+There is still the problem with ranges bothering me.
+	- as the index starts with 1 in matlab and 0 in python,
+	I should always make sure whether when using range I'll be indexing a matrix
+		- if yes, then use just range(number)
+
+For now all the functions have been completed.
+
+There was a problem with two calcErr functions, but it turns out both return 
+the same answer.
+
+I guess now I should start running the script.
+	- First arrange all the functions on top and remove the extra garbage.
+
+The graph for scatter(1:D, abs(V(:,1))) is not replicating properly.
+
+There is a problem with PCA. 
+	- The return on V is too big.
