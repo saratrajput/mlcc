@@ -114,7 +114,10 @@ Current Problem:
 
 lun 11 set 2017, 15.00.55, CEST
 
+To check for NaN elements in an array:
+	- isnan(array)
 
+Will worry about 3d plot later.
 Now the problem is to find the k eigen values, first I can try to use the 
 regular eig and compare the values.
 
@@ -192,3 +195,11 @@ The graph for scatter(1:D, abs(V(:,1))) is not replicating properly.
 
 There is a problem with PCA. 
 	- The return on V is too big.
+----------------------------------------
+
+dom 17 set 2017, 09.36.21, CEST
+Will start with the 3d scatter problem.
+	- The problem seems similar to what I had before with the regular scatter.
+	- Restarted the kernel but still it's not solved.
+
+
