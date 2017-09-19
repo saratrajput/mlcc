@@ -210,3 +210,13 @@ hoping for.
 	- Anyway it changes if I run it one more time.
 
 Had to convert ntr to int to solve the problem with holdoutCVOMP.
+
+----------------------------------------
+
+mar 19 set 2017, 22.08.34, CEST
+
+There are a few more lines to be run. After that, it'll be mostly correcting the
+graphs.
+
+There are some problems with Vm in holdoutCVOMP. Should cross check the outputs 
+with the matlab file.
