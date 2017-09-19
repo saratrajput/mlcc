@@ -202,4 +202,11 @@ Will start with the 3d scatter problem.
 	- The problem seems similar to what I had before with the regular scatter.
 	- Restarted the kernel but still it's not solved.
 
+----------------------------------------
 
+lun 18 set 2017, 23.05.20, CEST
+Got the graph, I was looking for, but this is for w not for V, which I was 
+hoping for.
+	- Anyway it changes if I run it one more time.
+
+Had to convert ntr to int to solve the problem with holdoutCVOMP.
