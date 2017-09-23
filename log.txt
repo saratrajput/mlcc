@@ -220,3 +220,35 @@ graphs.
 
 There are some problems with Vm in holdoutCVOMP. Should cross check the outputs 
 with the matlab file.
+----------------------------------------
+
+gio 21 set 2017, 00.15.56, CEST
+Solved the problem with the plot title. 
+
+For the 3d plot, I have checked that the normal syntax works.
+	- There is some problem with the data points
+	- Tried converting the complex numbers to real numbers.
+		- didn't solve it.
+	- Should check what are the values in the matlab script.
+	- Right now my numbers are e-2 to e-3.
+		- I feel it has something to do with that.
+	- Or maybe it could be because of the negative numbers.
+----------------------------------------
+
+sab 23 set 2017, 07.20.06, CEST
+Working from Lyon Gare.
+
+Checking the size of all the three arrays for 3d scatter plot.
+
+Finally able to solve the 3D scatter plot problem.
+
+Had to:
+	from matplotlib import pyplot
+	from mpl_toolkits.mplot3d import Axes3D
+	ax = Axes3D(fig)
+	fig = pyplot.figure()
+	pyplot.show()
+
+These were the changes made to the existing code.
+
+Now, there's some problem remaining in holdoutCVOMP
