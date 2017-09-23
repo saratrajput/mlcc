@@ -252,3 +252,20 @@ Had to:
 These were the changes made to the existing code.
 
 Now, there's some problem remaining in holdoutCVOMP
+
+	- It might be due to nonzero function.
+		- In python it is returning the indices of the nonzero elements
+		NOT the nonzero elements themselves.
+		- In matlab nonzero finds the nonzero elements themselves.
+
+	- As it turns out, in matlab function we are using find, which actually 
+	returns the indices of non zero elements.
+
+Problem in OMatchingPursuit:
+	- the function doesn't work with T = 1
+		- it should return w = zeros((D,1))
+		- but fails to return anything
+		- we can use try and except
+			- with except maybe we return w, r and I as it is.
+
+	- This problem has been solved too. Added one more line of row = row[0]
