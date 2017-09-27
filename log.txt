@@ -269,3 +269,20 @@ Problem in OMatchingPursuit:
 			- with except maybe we return w, r and I as it is.
 
 	- This problem has been solved too. Added one more line of row = row[0]
+----------------------------------------
+
+mer 27 set 2017, 23.44.52, CEST
+
+Adding the finishing touches.
+
+Changing all the imported functions of numpy to as np.
+
+importing everything from numpy makes the program slow.
+	- the interpreter has to go through all the namespaces and find the right 
+	one.
+	- basically, the namespace of numpy replaces all the other functions with 
+	the same names.
+----------------------------------------
+
+
+
