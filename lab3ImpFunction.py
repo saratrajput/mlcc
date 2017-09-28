@@ -1,8 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-#from scipy import *
 import scipy as sp
-#from numpy import *
 # for finding k eigen values
 import scipy.sparse.linalg
 ################################################################################
@@ -10,11 +8,6 @@ def MixGauss(means, sigmas, n):
     numRowsOfMeans = means.shape[0];
     numColsOfMeans = means.shape[1];
     
-#     X = zeros((200,2))
-#     Y = zeros((200,1))
-    
-#     X = zeros((200,2))
-#     Y = zeros((200,1))
     X = []
     Y = []
     for i in range(numColsOfMeans):
@@ -28,18 +21,11 @@ def MixGauss(means, sigmas, n):
             Xi[j, :] = np.squeeze(np.asarray(x))
             Yi[j] = i+1
             
-#         tempXi = Xi
-#         tempYi = Yi
-            
         X.append(Xi)
         Y.append(Yi)
-#         X = column_stack(Xi)
-#         X = concatenate((Xi, Xi), axis=0)
-#         Y = concatenate((Yi, Yi), axis=0)
-#         X[0:100,:] = tempXi
-#         X[100:200,:] = Xi
-#         Y[0:100,:] = tempYi
-#         Y[100:200,:] = Yi
+
+    X = np.concatenate(X, axis=0)
+    Y = np.concatenate(Y, axis=0)
     return X, Y
             
 ################################################################################
@@ -59,9 +45,7 @@ def PCA(X, k):
     
     numRowsOfX = X.shape[0]
     D, V = scipy.sparse.linalg.eigs((X.conj().transpose().dot(X))/numRowsOfX, k)
-#     diagonal = diag(D)
     D = D * (D > 0)
-#     D = sorted(D, reverse = True)
     D[::-1].sort()
     I = D.argsort()
     V = V[:, I]
@@ -83,7 +67,7 @@ def OMatchingPursuit(X, Y, T):
     for i in range(T-1):
         I_tmp = list(range(D))
         
-        ### Select the column of X which most "explains" the residual
+        # Select the column of X which most "explains" the residual
         a_max = -1
         
         for j in I_tmp:
@@ -115,17 +99,16 @@ def OMatchingPursuit(X, Y, T):
         
         # Update the residual
         r = Y - X.dot(w)
-#         residual = outputLabel - dot(inputData, estimatedCoeff)
         
     return w, r, I
 
 ################################################################################
 
 def holdoutCVOMP(X, Y, perc, nrip, intIter):
-    nIter = size(intIter)
+    nIter = np.size(intIter)
     
     n = X.shape[0]
-    ntr = int(ceil(n*(1-perc)))
+    ntr = int(np.ceil(n*(1-perc)))
         
     tmn = np.zeros((nIter, nrip))
     vmn = np.zeros((nIter, nrip))
@@ -145,16 +128,18 @@ def holdoutCVOMP(X, Y, perc, nrip, intIter):
             w, r, I = OMatchingPursuit(Xtr, Ytr, it)
             tmn[iit, rip] = calcErr(Xtr.dot(w),Ytr)
             vmn[iit, rip] = calcErr(Xvl.dot(w),Yvl)
+
+            print('%-12s%-12s%-12s%-12s' % ('rip', 'Iter', 'valErr', 'trErr'))
+            print('%-12i%-12i%-12f%-12f' % (rip, it, vmn[iit, rip], tmn[iit, rip]))
             
-#             print(('rip\\tIter\\tvalErr\\ttrErr\\n%d\\t%d\\t%f\\t%f\\n'), rip, it, vmn(iit, rip), tmn(iit, rip))
-            
-    Tm = median(tmn,axis=1);
-    Ts = std(tmn,axis=1);
-    Vm = median(vmn,axis=1);
-    Vs = std(vmn,axis=1);
+    Tm = np.median(tmn,axis=1);
+    Ts = np.std(tmn,axis=1);
+    Vm = np.median(vmn,axis=1);
+    Vs = np.std(vmn,axis=1);
     
     # one of the min removed to make it iterable
-    row = nonzero(Vm <= min(Vm));
+	# nonzero returns the indices of the elements that are non-zero
+    row = np.nonzero(Vm <= min(Vm));
     # added to solve last index problem
     row = row[0] 
     

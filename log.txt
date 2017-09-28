@@ -284,5 +284,15 @@ importing everything from numpy makes the program slow.
 	the same names.
 ----------------------------------------
 
+gio 28 set 2017, 23.50.03, CEST
+
+New file mlccLab3 created.
+
+All the functions changed from regular namespace to np.namespace.
+
+First part of lab3 html file done in jupyter markup.
+
+Should submit module, notebook for following and the test notebook.
+	- In addition with a README with explanation of all files.
 
 
