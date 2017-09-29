@@ -294,5 +294,14 @@ First part of lab3 html file done in jupyter markup.
 
 Should submit module, notebook for following and the test notebook.
 	- In addition with a README with explanation of all files.
+----------------------------------------
 
+ven 29 set 2017, 13.02.22, CEST
+
+How to insert help documentation for a function in custom module.
+
+Use ```code``` for highlighting code.
+
+----------------------------------------
+All Done.
 
